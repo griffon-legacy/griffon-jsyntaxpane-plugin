@@ -19,32 +19,43 @@
  */
 class JsyntaxpaneGriffonPlugin {
     // the plugin version
-    def version = "0.1"
+    String version = '0.2'
     // the version or versions of Griffon the plugin is designed for
-    def griffonVersion = '0.9 > *' 
+    String griffonVersion = '0.9.5-rc2 > *'
     // the other plugins this plugin depends on
-    def dependsOn = [:]
+    Map dependsOn = [:]
     // resources that are included in plugin packaging
-    def pluginIncludes = []
+    List pluginIncludes = []
     // the plugin license
-    def license = 'Apache Software License 2.0'
+    String license = 'Apache Software License 2.0'
     // Toolkit compatibility. No value means compatible with all
     // Valid values are: swing, javafx, swt, pivot, gtk
-    def toolkits = ['swing']
+    List toolkits = ['swing']
     // Platform compatibility. No value means compatible with all
     // Valid values are:
     // linux, linux64, windows, windows64, macosx, macosx64, solaris
-    def platforms = []
+    List platforms = []
+    // URL where documentation can be found
+    String documentation = ''
+    // URL where source can be found
+    String source = 'https://github.com/griffon/griffon-jsyntaxpane-plugin'
     def jdk = '1.6'
 
-    def author = 'Andres Almiray'
-    def authorEmail = 'aalmiray@users.sourceforge.net'
-    def title = 'Integrates JSyntaxPane'
-    def description = '''
-Integrates JSyntaxPane
-http://code.google.com/p/jsyntaxpane/
-'''
+    List authors = [
+        [
+            name: 'Andres Almiray',
+            email: 'aalmiray@yahoo.com'
+        ]
+    ]
+    String title = 'Integrates JSyntaxPane'
+    // accepts Markdown syntax. See http://daringfireball.net/projects/markdown/ for details
+    String description = '''
+Enables the usage of [JSyntaxPane](http://code.google.com/p/jsyntaxpane/) with any `JEditorPane`.
 
-    // URL to the plugin's documentation
-    def documentation = 'http://griffon.codehaus.org/Jsyntaxpane+Plugin'
+![Image](http://docs.codehaus.org/images/icons/emoticons/forbidden.gif) **Warning** This plugin requires JDK6 to be installed, it will also constrain the running environment to JRE6 or above. 
+
+# Usage #
+
+This plugin does not add any new nodes however it enables any `JEditorPane` to be syntax aware just by specifying a suitable value for its `contentType:` property, for example `"text/java"` or `"text/groovy"`. Additional properties can be configured in `griffon-app/conf/Config.groovy`, for example|
+'''
 }

@@ -23,7 +23,7 @@ import javax.swing.JEditorPane
  * @author Andres Almiray
  */
 class JsyntaxpaneGriffonAddon {
-    def addonInit(GriffonApplication app) {
+    void addonInit(GriffonApplication app) {
         // 1. merge config
         Configuration syntaxConfig = DefaultSyntaxKit.getConfig(DefaultSyntaxKit)
         app.config?.syntaxpane?.props.each { k, v ->
