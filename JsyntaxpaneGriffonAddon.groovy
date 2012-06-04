@@ -31,7 +31,7 @@ class JsyntaxpaneGriffonAddon {
         }
 
         // 2. init the kit
-        app.execSync {
+        app.execInsideUISync {
             DefaultSyntaxKit.initKit()
         }
     }

@@ -19,9 +19,9 @@
  */
 class JsyntaxpaneGriffonPlugin {
     // the plugin version
-    String version = '0.2'
+    String version = '0.3'
     // the version or versions of Griffon the plugin is designed for
-    String griffonVersion = '0.9.5-rc2 > *'
+    String griffonVersion = '0.9.5 > *'
     // the other plugins this plugin depends on
     Map dependsOn = [:]
     // resources that are included in plugin packaging
@@ -50,12 +50,19 @@ class JsyntaxpaneGriffonPlugin {
     String title = 'Integrates JSyntaxPane'
     // accepts Markdown syntax. See http://daringfireball.net/projects/markdown/ for details
     String description = '''
-Enables the usage of [JSyntaxPane](http://code.google.com/p/jsyntaxpane/) with any `JEditorPane`.
+Enables the usage of [JSyntaxPane][1] with any `JEditorPane`.
 
-![Image](http://docs.codehaus.org/images/icons/emoticons/forbidden.gif) **Warning** This plugin requires JDK6 to be installed, it will also constrain the running environment to JRE6 or above. 
 
-# Usage #
+Usage
+-----
 
-This plugin does not add any new nodes however it enables any `JEditorPane` to be syntax aware just by specifying a suitable value for its `contentType:` property, for example `"text/java"` or `"text/groovy"`. Additional properties can be configured in `griffon-app/conf/Config.groovy`, for example|
+This plugin does not add any new nodes however it enables any `JEditorPane` to be syntax aware just by specifying a suitable
+value for its `contentType:` property, for example `"text/java"` or `"text/groovy"`. Additional properties can be configured in
+`griffon-app/conf/Config.groovy`, for example
+
+        syntaxpane.props.'LineNumbers.Foreground' = '0xFF0000'
+        syntaxpane.props.'LineNumbers.Background' = '0x000000'
+
+[1]: http://code.google.com/p/jsyntaxpane/
 '''
 }
