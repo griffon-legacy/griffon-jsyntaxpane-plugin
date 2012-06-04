@@ -26,14 +26,12 @@ griffon.project.dependency.resolution = {
         //mavenRepo "http://repository.jboss.com/maven2/"
 
         // pluginDirPath is only available when installed
-        // String basePath = pluginDirPath? "${pluginDirPath}/" : ''
-        // flatDir name: "${pluginName}LibDir", dirs: ["${basePath}lib"]
-        flatDir name: 'jsyntaxpaneLibDir', dirs: 'lib'
+        String basePath = pluginDirPath? "${pluginDirPath}/" : ''
+        flatDir name: "${pluginName}LibDir", dirs: ["${basePath}lib"]
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime' or 'test' scopes eg.
         runtime 'jsyntaxpane:jsyntaxpane:0.9.5-b29'
-        // runtime 'mysql:mysql-connector-java:5.1.5'
     }
 }
 
