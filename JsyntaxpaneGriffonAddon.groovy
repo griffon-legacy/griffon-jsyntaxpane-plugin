@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 the original author or authors.
+ * Copyright 2010-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ class JsyntaxpaneGriffonAddon {
 
     private static final Map<JEditorPane, Map<String,String>> PROPS = [:]
 
-    def attributeDelegates = [
+    List attributeDelegates = [
         {builder, node, attributes ->
             if(node instanceof JEditorPane && attributes.contentType) {
                 PROPS[node] =  [:]
@@ -48,7 +48,7 @@ class JsyntaxpaneGriffonAddon {
         }
     ]
 
-    def postNodeCompletionDelegates = [
+    List postNodeCompletionDelegates = [
         {builder, parent, node ->
             if(node instanceof JEditorPane && PROPS[node]) {
                 Map props = PROPS.remove(node)
